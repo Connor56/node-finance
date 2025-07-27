@@ -1,0 +1,73 @@
+<div
+  id="group-modal-overlay"
+  class="hidden fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-70"
+>
+  <div
+    id="modal-content"
+    class="w-full max-w-3xl h-auto max-h-[90vh] flex flex-col bg-gray-800 p-6 rounded-lg shadow-xl relative"
+  >
+    <form id="group-form" novalidate class="flex-shrink-0">
+      <span id="group-modal-close-btn" class="absolute right-4 top-2 text-2xl cursor-pointer hover:text-white"
+        >&times;</span
+      >
+      <h2 class="text-xl font-bold mb-4">Add/Edit Group</h2>
+      <div class="grid grid-cols-2 gap-4">
+        <div class="form-group">
+          <label for="group-name" class="block mb-1 text-sm">Group Name</label>
+          <input
+            type="text"
+            id="group-name"
+            name="name"
+            required
+            class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+          />
+          <div class="error-message text-red-500 text-sm mt-1"></div>
+        </div>
+        <div class="form-group">
+          <label for="group-type" class="block mb-1 text-sm">Group Type</label>
+          <select id="group-type" name="type" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2">
+            <option value="incomes">Income</option>
+            <option value="outgoings">Outgoing</option>
+            <option value="capital">Capital/Asset</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions mt-4">
+        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md">Save Group</button>
+        <button type="button" id="group-modal-cancel-btn" class="bg-red-600 hover:bg-red-700 text-white p-2 rounded-md">
+          Cancel
+        </button>
+      </div>
+    </form>
+
+    <!-- Node Management Section -->
+    <div class="mt-6 border-t border-gray-700 pt-4 flex-grow min-h-0 flex flex-col gap-4">
+      <!-- Available Nodes -->
+      <div class="flex-1 flex flex-col min-h-0">
+        <h3 class="text-lg font-semibold mb-2 flex-shrink-0">Available Items</h3>
+        <div id="available-nodes-container" class="overflow-y-auto bg-gray-900 p-2 rounded-md">
+          <!-- Available nodes will be rendered here -->
+        </div>
+      </div>
+      <!-- Nodes in Group -->
+      <div class="flex-1 flex flex-col min-h-0">
+        <h3 class="text-lg font-semibold mb-2 flex-shrink-0">Items in this Group</h3>
+        <div class="table-wrapper-modal overflow-y-auto">
+          <table class="w-full">
+            <thead>
+              <tr>
+                <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Name</th>
+                <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Amount</th>
+                <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Tags</th>
+                <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="group-items-table-body" class="divide-y divide-gray-800">
+              <!-- Group items will be rendered here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

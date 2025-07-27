@@ -1,0 +1,134 @@
+<div
+  id="modal-overlay"
+  class="hidden fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-70"
+>
+  <div id="modal-content" class="bg-gray-800 p-6 rounded-lg shadow-xl relative w-full max-w-lg">
+    <form id="add-item-form" novalidate class="flex flex-col gap-4">
+      <span id="modal-close-btn" class="absolute top-2 right-4 text-2xl cursor-pointer hover:text-white">&times;</span>
+      <h2 class="text-xl font-bold">Add New Financial Item</h2>
+
+      <div class="form-group">
+        <label for="item-type" class="block mb-1 text-sm">Type</label>
+        <select id="item-type" name="type" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2">
+          <option value="incomes">Income</option>
+          <option value="outgoings">Outgoing</option>
+          <option value="capital">Capital/Asset</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="item-name" class="block mb-1 text-sm">Name (Source/Destination/Asset)</label>
+        <input
+          type="text"
+          id="item-name"
+          name="name"
+          required
+          class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+        />
+        <div class="error-message text-red-500 text-sm mt-1"></div>
+      </div>
+      <div id="is-asset-group-container" class="form-group">
+        <label class="flex items-center gap-2">
+          <input type="checkbox" id="is-asset-toggle" class="h-4 w-4 bg-gray-700 border-gray-600" />
+          Is this an asset (Quantity × Rate)?
+        </label>
+      </div>
+      <div id="is-speculative-group-container" class="form-group">
+        <label class="flex items-center gap-2">
+          <input type="checkbox" id="is-speculative-toggle" class="h-4 w-4 bg-gray-700 border-gray-600" />
+          Is this speculative/hypothetical?
+        </label>
+      </div>
+      <div id="speculative-group" class="hidden space-y-4">
+        <div class="form-group">
+          <label for="speculative-description" class="block mb-1 text-sm">Description/Reasoning</label>
+          <textarea
+            id="speculative-description"
+            name="description"
+            rows="3"
+            placeholder="Explain why this speculative item might occur..."
+            class="w-full bg-gray-700 border border-gray-600 rounded-md p-2 resize-vertical"
+          ></textarea>
+          <div class="error-message text-red-500 text-sm mt-1"></div>
+        </div>
+        <div class="form-group">
+          <label for="speculative-likelihood" class="block mb-1 text-sm">Likelihood (%)</label>
+          <input
+            type="number"
+            id="speculative-likelihood"
+            name="likelihood"
+            min="1"
+            max="100"
+            step="1"
+            placeholder="50"
+            class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+          />
+          <div class="error-message text-red-500 text-sm mt-1"></div>
+          <div class="text-xs text-gray-400 mt-1">
+            Enter a percentage from 1-100 representing how likely this is to occur
+          </div>
+        </div>
+      </div>
+      <div id="amount-group" class="form-group">
+        <label for="item-amount" class="block mb-1 text-sm">Amount (£)</label>
+        <input
+          type="number"
+          id="item-amount"
+          name="amount"
+          required
+          step="any"
+          class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+        />
+        <div class="error-message text-red-500 text-sm mt-1"></div>
+      </div>
+      <div id="asset-group" class="hidden">
+        <div class="form-group">
+          <label for="item-quantity" class="block mb-1 text-sm">Quantity</label>
+          <input
+            type="number"
+            id="item-quantity"
+            name="quantity"
+            step="any"
+            class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+          />
+          <div class="error-message text-red-500 text-sm mt-1"></div>
+        </div>
+        <div class="form-group">
+          <label for="item-rate" class="block mb-1 text-sm">Rate (£)</label>
+          <input
+            type="number"
+            id="item-rate"
+            name="rate"
+            step="any"
+            class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+          />
+          <div class="error-message text-red-500 text-sm mt-1"></div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="item-tags" class="block mb-1 text-sm">Tags (comma-separated)</label>
+        <input
+          type="text"
+          id="item-tags"
+          name="tags"
+          class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+        />
+      </div>
+      <div id="group-select-container" class="form-group hidden">
+        <label for="item-group-select" class="block mb-1 text-sm">Group</label>
+        <select id="item-group-select" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2">
+          <option value="">None</option>
+        </select>
+      </div>
+      <div class="form-actions flex gap-4 mt-4">
+        <button type="submit" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md">Save Item</button>
+        <button
+          type="button"
+          id="modal-cancel-btn"
+          class="flex-1 bg-red-600 hover:bg-red-700 text-white p-2 rounded-md"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

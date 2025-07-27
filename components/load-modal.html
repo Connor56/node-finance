@@ -1,0 +1,83 @@
+<div
+  id="load-modal-overlay"
+  class="hidden fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-70"
+>
+  <div
+    id="load-modal-content"
+    class="w-full max-w-2xl h-auto max-h-[90vh] flex flex-col bg-gray-800 p-6 rounded-lg shadow-xl relative"
+  >
+    <span id="load-modal-close-btn" class="absolute right-4 top-2 text-2xl cursor-pointer hover:text-white"
+      >&times;</span
+    >
+    <h2 class="text-xl font-bold mb-4">Load Saved State</h2>
+
+    <div class="flex justify-between items-center mb-3">
+      <h3 class="text-lg font-semibold">Saved States</h3>
+      <button id="refresh-saved-states-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm">
+        Refresh
+      </button>
+    </div>
+
+    <div
+      id="saved-states-container"
+      class="flex-grow overflow-y-auto bg-gray-900 p-3 rounded-md min-h-[300px] max-h-[400px]"
+    >
+      <div id="saved-states-list">
+        <!-- Saved states will be dynamically loaded here -->
+      </div>
+      <div id="no-saved-states" class="hidden text-center text-gray-400 py-8">
+        <p class="text-lg mb-2">No saved states found</p>
+        <p class="text-sm">Save your first state to see it here</p>
+      </div>
+      <div id="loading-saved-states" class="hidden text-center text-gray-400 py-8">
+        <p>Loading saved states...</p>
+      </div>
+    </div>
+
+    <div class="flex gap-3 mt-4">
+      <button
+        type="button"
+        id="load-modal-close-btn-bottom"
+        class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md font-medium"
+      >
+        Close
+      </button>
+    </div>
+
+    <!-- Success/Error Messages -->
+    <div id="load-modal-messages" class="mt-4 hidden">
+      <div id="load-success-message" class="hidden bg-green-600 text-white p-3 rounded-md text-sm">
+        <!-- Success messages will be inserted here -->
+      </div>
+      <div id="load-error-message" class="hidden bg-red-600 text-white p-3 rounded-md text-sm">
+        <!-- Error messages will be inserted here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Saved State Item Template -->
+<template id="saved-state-item-template">
+  <div class="saved-state-item bg-gray-800 p-4 rounded-md mb-3 border border-gray-600">
+    <div class="flex justify-between items-start">
+      <div class="flex-grow">
+        <h4 class="font-medium text-white mb-1 saved-state-name"><!-- Name will be inserted here --></h4>
+        <p class="text-sm text-gray-400 saved-state-timestamp"><!-- Timestamp will be inserted here --></p>
+      </div>
+      <div class="flex gap-2 ml-4">
+        <button
+          class="load-state-btn bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded text-sm font-medium"
+          data-state-id=""
+        >
+          Load
+        </button>
+        <button
+          class="delete-saved-state-btn bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded text-sm font-medium"
+          data-state-id=""
+        >
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</template>

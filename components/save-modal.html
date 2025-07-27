@@ -1,0 +1,58 @@
+<div
+  id="save-modal-overlay"
+  class="hidden fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-black bg-opacity-70"
+>
+  <div id="save-modal-content" class="bg-gray-800 p-6 rounded-lg shadow-xl relative w-full max-w-lg">
+    <span id="save-modal-close-btn" class="absolute top-2 right-4 text-2xl cursor-pointer hover:text-white"
+      >&times;</span
+    >
+    <h2 class="text-xl font-bold mb-4">Save Current State</h2>
+
+    <form id="save-state-form" novalidate class="flex flex-col gap-4">
+      <div class="form-group">
+        <label for="save-state-name" class="block mb-1 text-sm">State Name</label>
+        <input
+          type="text"
+          id="save-state-name"
+          name="name"
+          required
+          placeholder="Enter a name for this state..."
+          class="w-full bg-gray-700 border border-gray-600 rounded-md p-2"
+        />
+        <div class="error-message text-red-500 text-sm mt-1"></div>
+      </div>
+
+      <div class="bg-gray-700 p-3 rounded-md">
+        <p class="text-sm text-gray-300 mb-2">This will save:</p>
+        <ul class="text-xs text-gray-400 list-disc list-inside space-y-1">
+          <li>Current cash flow data and structure</li>
+          <li>Active filters and view settings</li>
+          <li>Current timestamp</li>
+        </ul>
+      </div>
+
+      <div class="form-actions flex gap-3">
+        <button type="submit" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-md font-medium">
+          Save State
+        </button>
+        <button
+          type="button"
+          id="save-modal-cancel-btn"
+          class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md font-medium"
+        >
+          Cancel
+        </button>
+      </div>
+    </form>
+
+    <!-- Success/Error Messages -->
+    <div id="save-modal-messages" class="mt-4 hidden">
+      <div id="save-success-message" class="hidden bg-green-600 text-white p-3 rounded-md text-sm">
+        <!-- Success messages will be inserted here -->
+      </div>
+      <div id="save-error-message" class="hidden bg-red-600 text-white p-3 rounded-md text-sm">
+        <!-- Error messages will be inserted here -->
+      </div>
+    </div>
+  </div>
+</div>

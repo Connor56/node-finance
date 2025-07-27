@@ -1,0 +1,85 @@
+<aside
+  id="sidebar"
+  class="relative transition-all duration-300 ease-in-out w-96 p-4 bg-gray-900 flex-shrink-0 flex flex-col gap-4 overflow-y-auto pl-5"
+>
+  <div id="sidebar-content" class="flex flex-col gap-4">
+    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700 flex flex-col gap-2">
+      <h2 class="text-lg font-semibold border-b border-gray-700 pb-2 mb-2">Controls</h2>
+      <button id="add-new-item-btn" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md w-full">
+        Add New Item
+      </button>
+      <button id="create-group-btn" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md w-full">
+        Create Group
+      </button>
+      <button id="save-state-btn" class="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-md w-full">
+        Save State
+      </button>
+      <button id="load-state-btn" class="bg-purple-600 hover:bg-purple-700 text-white p-2 rounded-md w-full">
+        Load State
+      </button>
+      <button id="speculative-colour-btn" class="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-md w-full">
+        Toggle Speculative Colour
+      </button>
+      <button id="speculative-on-off-btn" class="bg-yellow-500 hover:bg-yellow-600 text-white p-2 rounded-md w-full">
+        Toggle Speculative
+      </button>
+      <button id="export-json-btn" class="bg-green-600 hover:bg-green-700 text-white p-2 rounded-md w-full">
+        Export JSON
+      </button>
+    </div>
+
+    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+      <h3 class="text-lg font-semibold border-b border-gray-700 pb-2 mb-2">Import JSON</h3>
+      <textarea
+        id="json-input"
+        rows="10"
+        placeholder="Paste your JSON data here..."
+        class="w-full bg-gray-700 border border-gray-600 rounded-md p-2 mb-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      ></textarea>
+      <button id="generate-btn" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md w-full">
+        Generate from JSON
+      </button>
+      <div id="error-message" class="text-red-500 mt-2 hidden"></div>
+    </div>
+
+    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+      <h3 class="text-lg font-semibold border-b border-gray-700 pb-2 mb-2">Filter by Tags</h3>
+      <div id="tag-filter-container" class="flex flex-wrap gap-2 mb-2 max-h-36 overflow-y-auto">
+        <!-- Tag checkboxes will be generated here -->
+      </div>
+      <button id="clear-filter-btn" class="mt-2 bg-red-600 hover:bg-red-700 text-white p-2 rounded-md w-full">
+        Clear Filter
+      </button>
+    </div>
+
+    <div class="bg-gray-800 p-4 rounded-lg border border-gray-700">
+      <h3 class="text-lg font-semibold border-b border-gray-700 pb-2 mb-2">Saved Filters</h3>
+      <div class="form-group mb-2">
+        <label for="filter-name-input" class="block mb-1 text-sm">Filter Name</label>
+        <input
+          type="text"
+          id="filter-name-input"
+          placeholder="e.g., Holiday Budget"
+          class="w-full bg-gray-700 border border-gray-600 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+      <button id="save-filter-btn" class="bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md w-full">
+        Save Current Filter
+      </button>
+      <div class="form-group mt-2">
+        <label for="saved-filters-select" class="block mb-1 text-sm">Load Filter</label>
+        <select id="saved-filters-select" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2">
+          <option value="">Select a filter...</option>
+        </select>
+      </div>
+      <div class="flex gap-2 mt-2">
+        <button id="load-filter-btn" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white p-2 rounded-md">
+          Load
+        </button>
+        <button id="delete-filter-btn" class="flex-1 bg-red-600 hover:bg-red-700 text-white p-2 rounded-md">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</aside>

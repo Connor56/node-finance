@@ -1,0 +1,76 @@
+<footer
+  id="bottom-bar"
+  class="relative h-[35%] min-h-[250px] bg-gray-900 border-t border-gray-700 flex flex-col p-5 box-border transition-all duration-300 ease-in-out"
+>
+  <button
+    id="bottom-bar-toggle"
+    class="absolute left-1/2 -translate-x-1/2 -top-4 bg-gray-600 hover:bg-gray-700 text-white p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 z-10"
+  >
+    <svg
+      id="bottom-bar-toggle-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-6 w-6"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+    </svg>
+  </button>
+  <div id="bottom-bar-content" class="summary-section mb-4 pb-4 border-b border-gray-700">
+    <h2 class="text-xl font-bold mb-2">Financial Summary</h2>
+    <div class="flex gap-8 text-lg font-bold">
+      <p>
+        Net Monthly Flow:
+        <span id="net-flow-total" class="text-blue-400">£0.00</span>
+      </p>
+      <p>
+        Net Worth:
+        <span id="net-worth-total" class="text-green-400">£0.00</span>
+      </p>
+    </div>
+  </div>
+  <div id="tables-container" class="flex-grow flex gap-5 overflow-y-auto">
+    <div class="table-wrapper flex-1 overflow-y-auto">
+      <h3 class="text-lg font-semibold mb-2">Incomes</h3>
+      <table id="income-table" class="w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Source</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Amount</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Tags</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800"></tbody>
+      </table>
+    </div>
+    <div class="table-wrapper flex-1 overflow-y-auto">
+      <h3 class="text-lg font-semibold mb-2">Outgoings</h3>
+      <table id="outgoing-table" class="w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Destination</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Amount</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Tags</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800"></tbody>
+      </table>
+    </div>
+    <div class="table-wrapper flex-1 overflow-y-auto">
+      <h3 class="text-lg font-semibold mb-2">Capital & Assets</h3>
+      <table id="capital-table" class="w-full border-collapse">
+        <thead>
+          <tr>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Asset</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Quantity</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Rate</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Total Value</th>
+            <th class="p-2 text-left border-b border-gray-700 whitespace-nowrap">Tags</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-gray-800"></tbody>
+      </table>
+    </div>
+  </div>
+</footer>

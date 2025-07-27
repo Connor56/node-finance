@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node Finance</title>
+    <!-- The link to style.css is removed -->
+    <link rel="stylesheet" href="https://unpkg.com/vis-network@latest/dist/vis-network.min.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      :root {
+        --bg-color: #111827; /* gray-900 */
+        --primary-color: #1f2937; /* gray-800 */
+        --secondary-color: #374151; /* gray-700 */
+        --accent-color: #ef4444; /* red-500 */
+        --text-color: #d1d5db; /* gray-300 */
+        --green-color: #22c55e; /* green-500 */
+        --red-color: #ef4444; /* red-500 */
+        --blue-color: #3b82f6; /* blue-500 */
+        --border-color: #4b5563; /* gray-600 */
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        height: 100%;
+        overflow: hidden;
+      }
+
+      .glow-green {
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.7), 0 0 5px rgba(34, 197, 94, 0.7);
+      }
+
+      input.invalid {
+        border-color: var(--red-color);
+      }
+
+      .table-wrapper-modal {
+        border: 1px solid var(--border-color);
+        border-radius: 0.5rem;
+        padding: 5px;
+      }
+
+      .vis-network {
+        height: 100%;
+        width: 100%;
+      }
+
+      table thead {
+        background-color: var(--primary-color);
+        position: sticky;
+        top: 0;
+      }
+
+      tbody tr:hover {
+        background-color: var(--secondary-color);
+      }
+
+      /* Vis.js Tooltip Styling */
+      .vis-tooltip {
+        position: absolute;
+        background-color: var(--primary-color) !important;
+        color: var(--text-color) !important;
+        border: 1px solid var(--border-color) !important;
+        border-radius: 4px !important;
+        padding: 8px 12px !important;
+        font-size: 12px !important;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+        z-index: 9999 !important;
+        pointer-events: none !important;
+        white-space: pre-line !important;
+        max-width: 300px !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3) !important;
+      }
+
+      /* Only show tooltip when it has proper positioning */
+      .vis-tooltip[style*="left: 0px"][style*="top: 0px"] {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-300 font-sans">
+    <div id="app-container" class="flex flex-col h-screen">
+      <main id="main-content" class="flex flex-1 min-h-0">
+        <div id="graph-container" class="flex-grow relative bg-gray-800 border-r border-gray-700 overflow-hidden">
+          <!-- Vis.js will render the graph here -->
+        </div>
+        <!-- Sidebar Toggle -->
+        <div class="flex-grow relative bg-gray-800 border-r border-gray-700">
+          <button
+            id="sidebar-toggle"
+            class="absolute top-1/2 -translate-y-1/2 -right-4 bg-gray-600 hover:bg-gray-700 text-white p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-gray-500 z-10"
+          >
+            <svg
+              id="sidebar-toggle-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-6 w-6"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </button>
+        </div>
+        <!-- Sidebar -->
+        <div id="sidebar-placeholder"></div>
+      </main>
+
+      <!-- Bottom Bar -->
+      <div id="bottom-bar-placeholder"></div>
+
+      <!-- Modal for adding new items -->
+      <div id="item-modal-placeholder"></div>
+
+      <!-- Modal for adding/editing groups -->
+      <div id="group-modal-placeholder"></div>
+
+      <!-- Modal for confirming right click deletion -->
+      <div id="delete-modal-placeholder"></div>
+
+      <!-- Modal for saving current state -->
+      <div id="save-modal-placeholder"></div>
+
+      <!-- Modal for loading saved states -->
+      <div id="load-modal-placeholder"></div>
+    </div>
+
+    <script src="https://unpkg.com/vis-network@latest/dist/vis-network.min.js"></script>
+    <script src="dist/script.js" type="module"></script>
+  </body>
+</html>
