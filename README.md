@@ -2,6 +2,8 @@
 
 You can find the site here: https://connor56.github.io/node-finance/
 
+<img width="1922" height="815" alt="image" src="https://github.com/user-attachments/assets/457d723c-c8fe-47aa-a4f8-a8a679128a67" />
+
 ## What is it?
 
 Node Finance is a personal finance application to help you track cash flow and wealth. It has the following features:
@@ -12,7 +14,7 @@ Node Finance is a personal finance application to help you track cash flow and w
 - To help you plan for the future, it lets you create speculative incomes and outgoings with percentages attached to them.
 - It lets you group together related incomes, outgoings, or capital, decluttering and simplifying the graph.
 - It lets you save and load your data, all of which is stored locally in your browser.
-- It costs NOTHING and will be useable in its current state forever.
+- It costs NOTHING and will be usable in its current state forever.
 
 ## Who is it for?
 
