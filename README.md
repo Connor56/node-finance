@@ -1,5 +1,7 @@
 # Node Finance
 
+You can find the site here: https://connor56.github.io/node-finance/
+
 ## What is it?
 
 Node Finance is a personal finance application to help you track cash flow and wealth. It has the following features:
